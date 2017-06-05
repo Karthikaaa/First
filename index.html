@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+ <div class="row">
+   <div class="col-md-4 col-md-offset-4">
+     <div class="row">
+
+         <div class="col-md-3 col-md-4"><input type="button" name="seven" value="   7    " OnClick="input('7')"><input type="button" name="eight" value="   8    " OnClick="input('8')"><input type="button" name="nine" value="   9    " OnClick="input('9')"><input type="button" name="plus" value="      +     " OnClick="operator('+')"></div>
+         <div class="col-md-3 col-md-4"><input type="button" name="four" value="   4    " OnClick="input('4')"><input type="button" name="five" value="   5    " OnClick="input('5')"><input type="button" name="six" value="   6    " OnClick="input('6')"><input type="button" name="minus" value="     -       " OnClick="operator('-')"></div>
+         <div class="col-md-3 col-md-4"><input type="button" name="one" value="   1    " OnClick="input('1')"><input type="button" name="two" value="   2    " OnClick="input('2')"><input type="button" name="three" value="   3    " OnClick="input('3')"><input type="button" name="multiply" value="      *      " OnClick="operator('*')"></div>
+         <div class="col-md-3 col-md-4"><input type="button" name="zero" value="   0    " OnClick="input('0')"><input type="button" name="equal" value="         =          " OnClick="operator('=')"><input type="button" name="div" value="      /       " OnClick="operator('/')"></div>
+
+     </div>
+   </div>
+ </div>
+     <script>
+         num1=0;
+         num2=0;
+         operator=0;
+         flag=0;
+
+         function input(key)
+         {
+          if(flag==1)
+           {
+             num1='';
+             num2='';
+             operator='';
+            }
+           if(operator==='')
+           {
+             num1=num1+key;
+           }
+           else
+           {
+             num2=num2+key
+           }
+            display(num1+""+operator+""+num2);
+           }
+
+
+           function operate(symbol)
+           {
+            operator=symbol;
+            display(num1+""+operator);
+           }
+
+
+            function calculate()
+            {
+              var x = parseInt(num1);
+              var y = parseInt(num2);
+              if(operator==='+')
+               res=x+y;
+              if(operator==='-')
+               res=x-y;
+               if(operator==='8')
+               res=x8y;
+              if(operator==='/')
+               { if(y==0)
+                  {
+                     flag=1;
+                     display("error- cannot divide by zero");
+                     return;
+                  }
+                  else
+                  {
+                    res=x/y;
+                  }
+            }
+</script>
+</body>
+</html>
